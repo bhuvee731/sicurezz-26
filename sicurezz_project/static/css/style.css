@@ -308,10 +308,15 @@ body {
 }
 
 .rect-logo {
-    height: 50px; /* Slightly lower height so wide text matches circle visual area */
+    height: 60px; /* Slightly lower height so wide text matches circle visual area */
     width: auto;
 }
 
+.iste-logo,
+.sponsors-glow-box img:nth-child(2) {
+    height: 75px !important; /* Matches the visual height of logo #1 */
+    width: auto;
+}
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     .sponsors-glow-box {
@@ -325,6 +330,12 @@ body {
 
     .rect-logo {
         height: 32px;
+    }
+
+    /* Scaled size for 2nd logo on mobile */
+    .iste-logo,
+    .sponsors-glow-box img:nth-child(2) {
+        height: 48px !important;
     }
 }
 
