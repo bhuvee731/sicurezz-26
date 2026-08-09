@@ -48,6 +48,7 @@ body {
 }
 
 /* Floating Explosion Burst Cash Prize Badge (Bottom Right Corner) */
+/* Floating Explosion Burst Cash Prize Badge */
 .cash-prize-burst {
     position: fixed;
     bottom: 20px;
@@ -64,6 +65,18 @@ body {
 
 .cash-prize-burst:hover {
     transform: scale(1.08) rotate(-2deg);
+}
+
+/* Mobile Fix: Resize and position cleanly on smaller screens */
+@media screen and (max-width: 768px) {
+    .cash-prize-burst {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 20px auto;
+        width: 130px;
+        height: 115px;
+    }
 }
 
 .burst-svg {
