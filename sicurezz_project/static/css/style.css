@@ -433,9 +433,9 @@ footer a { color: var(--accent-color); text-decoration: none; }
 
 /* Sponsor Image Sizing */
 .sponsor-logo {
-    max-height: 100px; /* Controls height so logos stay uniform */
+    max-height: 150px; /* Controls height so logos stay uniform */
     width: auto;
-    max-width: 220px;
+    max-width: 280px;
     object-fit: contain;
     filter: brightness(0.9) contrast(1.1);
 }
