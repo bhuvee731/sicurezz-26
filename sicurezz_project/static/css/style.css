@@ -73,11 +73,15 @@ body {
         position: relative;
         bottom: auto;
         right: auto;
-        margin: 20px auto;
+        margin: 10px auto 0 auto;
         width: 130px;
         height: 115px;
     }
 }
+
+.hero-buttons, .cta-buttons {
+        margin-bottom: 5px; /* Pulls the prize tag closer to buttons */
+    }
 
 .burst-svg {
     position: absolute;
