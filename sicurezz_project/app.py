@@ -159,7 +159,6 @@ SYMPOSIUM_DATA = {
     "workshop": {
         "title": "AI with Cyber Security",
         "description": "An intensive hands-on workshop focused on leveraging Artificial Intelligence models for threat detection, defensive automation, and security analytics.",
-        "fee": "₹250 per participant"
     }
 }
 
