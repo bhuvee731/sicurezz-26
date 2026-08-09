@@ -300,8 +300,8 @@ body {
 /* Mobile Responsiveness (Screens <= 768px) */
 @media screen and (max-width: 768px) {
     .sponsors-container {
-        gap: 10px;          /* Tighten gap so all fit nicely on mobile */
-        padding: 20px 10px;
+        gap: 5px;          /* Tighten gap so all fit nicely on mobile */
+        padding: 15px 10px;
     }
 
     .sponsors-container img {
