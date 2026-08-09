@@ -427,33 +427,31 @@ footer a { color: var(--accent-color); text-decoration: none; }
     align-items: center;
     gap: 2rem; /* Space between the two logos */
     flex-wrap: wrap; /* Wraps cleanly on mobile screens */
+    padding:20px 0 ;
 }
 
 
 
 /* Sponsor Image Sizing */
-.sponsor-logo {
-    max-height: 150px; /* Controls height so logos stay uniform */
-    width: auto;
-    max-width: 280px;
+.sponsor-logo, .sponsors-container img {
+    max-width: 150px; /* Base size for laptop screens */
+    height: auto;
     object-fit: contain;
-    filter: brightness(0.9) contrast(1.1);
+    transition: transform 0.3s ease;
 }
 
-/* Mobile Adjustment */
-@media (max-width: 600px) {
+/* Mobile View Adjustments (Screens <= 768px) */
+@media screen and (max-width: 768px) {
     .sponsors-container {
-        gap: 15px;
+        gap: 20px; /* Reduce gap between logos so they have more room to expand */
     }
-    .sponsor-card {
-        padding: 8px 16px;
-    }
-    .sponsor-logo {
-        max-height: 40px;
-        max-width: 140px;
+
+    .sponsor-logo, .sponsors-container img {
+        max-width: 100px; /* Increases image size on mobile screens */
+        width: 35%; /* Allows up to 2-3 logos per row flexibly */
+        height: auto;
     }
 }
-
 /*tittle font*/
 
 /* Navbar Logo Image */
