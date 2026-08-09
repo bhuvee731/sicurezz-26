@@ -266,54 +266,53 @@ body {
 }
 
 /* Sponsors Section Container */
-.sponsors-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-    padding: 30px 20px;
-    flex-wrap: wrap; /* Allows wrap on smaller screens if needed */
+
+/* --- New Sponsors Glow Box Styles --- */
+
+.sponsors-section {
+    padding: 60px 0;
+    text-align: center;
 }
 
-/* Base Uniform Logo Sizing (Desktop/Laptop) */
-.sponsors-container img {
-    height: 150px !important;          /* Balanced baseline height for all logos */
-    width: auto;           /* Maintains original aspect ratio */
-    max-width: 280px;      /* Keeps rectangular logos well-proportioned */
-    object-fit: contain;
-    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5));
-    transition: transform 0.3s ease;
+/* 1. The Container Box with border and glow */
+.sponsors-glow-box {
+    display: inline-block; /* Makes box only as wide as image */
+    background: rgba(10, 15, 28, 0.6); /* Dark background */
+    border: 2px solid rgba(0, 240, 255, 0.5); /* Semi-transparent cyan border */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), /* Inner glow */
+                inset 0 0 15px rgba(0, 240, 255, 0.1); /* Soft outer glow */
+    transition: all 0.3s ease;
+    max-width: 90%; /* Prevents box from touching edges on mobile */
+    margin: 0 auto;
 }
 
-/* Specific scale correction for the 3rd image (ISTE logo) */
-.sponsors-container img:nth-child(3),
-.sponsors-container img:last-child {
-    height: 150px;          /* Slightly smaller height so its visual weight matches the others */
-    max-width: 280px;
+/* Suble pulse animation on hover */
+.sponsors-glow-box:hover {
+    border-color: rgba(0, 240, 255, 1);
+    box-shadow: 0 0 35px rgba(0, 240, 255, 0.5), 
+                inset 0 0 20px rgba(0, 240, 255, 0.2);
+    transform: translateY(-3px);
 }
 
-
-.sponsors-container img:hover {
-    transform: scale(1.08);
+/* 2. The Image Styling inside the box */
+.all-sponsors-img {
+    max-width: 100%; /* Ensures it scales down on mobile */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes bottom whitespace */
+    
+    /* Optimized size for Laptop/Desktop */
+    width: 600px; /* Adjust this number to make logos bigger/smaller on laptop */
 }
 
-/* Mobile Responsiveness (Screens <= 768px) */
+/* 3. Mobile Responsiveness */
 @media screen and (max-width: 768px) {
-    .sponsors-container {
-        gap: 5px;          /* Tighten gap so all fit nicely on mobile */
-        padding: 15px 10px;
+    .sponsors-glow-box {
+        padding: 20px; /* Reduced padding on small screens */
+        border-width: 1.5px;
     }
-
-    .sponsors-container img {
-        height: 90px !important;       /* Clear and readable on mobile without overflowing */
-        max-width: 185px;
-    }
-
-    .sponsors-container img:nth-child(3),
-    .sponsors-container img:last-child {
-        height: 90px;       /* Scaled proportionally for mobile */
-        max-width: 185px;
-    }
+    
 }
 
 
