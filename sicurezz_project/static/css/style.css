@@ -289,9 +289,48 @@ body {
 .workshop-card { border: 1px solid var(--accent-color); }
 .workshop-header { display: flex; justify-content: space-between; align-items: center; }
 
+.agenda-timeline { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; 
+}
 
-.agenda-timeline { display: flex; flex-direction: column; gap: 12px; }
-.agenda-item { display: flex; justify-content: space-between; padding: 12px 18px; background: rgba(255, 255, 255, 0.02); border-left: 3px solid var(--accent-color); }
+/* Base Desktop View (Fits side-by-side cleanly) */
+.agenda-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 12px 18px; 
+    background: rgba(255, 255, 255, 0.02); 
+    border-left: 3px solid var(--accent-color); 
+}
+
+/* Ensure the time string never wraps awkwardly into multiple lines */
+.agenda-item span:first-child,
+.agenda-time {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+.agenda-item span:last-child,
+.agenda-title {
+    text-align: right;
+}
+
+/* Mobile View (Stacks time and title vertically to avoid narrow squishing) */
+@media screen and (max-width: 768px) {
+    .agenda-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 12px 15px;
+    }
+
+    .agenda-item span:last-child,
+    .agenda-title {
+        text-align: left; /* Left aligns title below the time for clean reading */
+    }
+}
 
 .text-center { text-align: center; }
 .highlight { color: var(--accent-color); font-weight: bold; margin-top: 6px; }
