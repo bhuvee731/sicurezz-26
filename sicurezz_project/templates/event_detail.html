@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ event.title }} | SICUREZZa'26</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-shield-halved"></i> SICUREZZ'26</a>
+        </div>
+        <a href="/" class="btn-outline glow-box"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    </nav>
+
+    <main class="container" style="padding-top: 40px;">
+        <div class="card detail-page-card glow-box">
+            <span class="badge glow-box">{{ event.category }} Event</span>
+            <h1 class="enhanced-font" style="font-size: 2.8rem; margin: 15px 0; color: var(--accent-color);">{{ event.title }}</h1>
+            <p class="tagline" style="font-size: 1.2rem;">{{ event.tagline }}</p>
+            <p class="venue" style="font-size: 1.1rem; margin-top: 10px;"><i class="fa-solid fa-location-dot"></i> Venue: {{ event.venue }}</p>
+
+            <div class="divider"></div>
+
+            <div class="detail-section">
+                <h2 class="enhanced-font">Description</h2>
+                <p>{{ event.description }}</p>
+            </div>
+
+            {% if event.rounds %}
+            <div class="detail-section">
+                <h2 class="enhanced-font">Rounds Format</h2>
+                <ul class="styled-list">
+                    {% for r in event.rounds %}
+                    <li>{{ r }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            <div class="detail-section">
+                <h2 class="enhanced-font">Rules & Guidelines</h2>
+                <ol class="styled-list number-list">
+                    {% for rule in event.rules %}
+                    <li>{{ rule }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+
+            {% if event.prerequisites %}
+            <div class="detail-section highlight-block">
+                <h2 class="enhanced-font" style="color: var(--accent-color);">Pre-Requisites</h2>
+                <ul class="styled-list">
+                    {% for req in event.prerequisites %}
+                    <li>{{ req }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            <div style="margin-top: 30px; text-align: center;">
+                <button class="btn-glow glow-box" onclick="openRegisterModal()" style="padding: 14px 35px; font-size: 1.1rem;">Register for {{ event.title }}</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal Included for direct registration -->
+    <div id="registerModal" class="modal-overlay">
+        <div class="modal-box glow-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-triangle-exclamation"></i> Important Instructions</h3>
+                <span class="close-btn" onclick="closeRegisterModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="alert-box">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Register <strong>only one member per team</strong>.</li>
+                        <li><i class="fa-solid fa-check"></i> Mention your name, team members, and college name <strong>correctly</strong>.</li>
+                        <li><i class="fa-solid fa-check"></i> Certificate details will match your entry.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeRegisterModal()">Cancel</button>
+                <button class="btn-glow glow-box" onclick="proceedToGoogleForm('{{ data.google_form_url }}')">Proceed to Form</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

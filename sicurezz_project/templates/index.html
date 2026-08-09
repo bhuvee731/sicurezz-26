@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SICUREZZ'26 | Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<!-- Interactive Full-Page Particle Canvas -->
+<canvas id="cyberParticleCanvas"></canvas>
+
+<body>
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <a href="#" class="navbar-logo-link">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Sicurezz'26" class="nav-logo-img">
+</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#workshop">Workshop</a></li>
+            <li><a href="#agenda">Agenda</a></li>
+            <li><a href="#committee">Committee</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="btn-primary" onclick="openRegisterModal()">Register Now</button>
+    </nav>
+
+    <!-- Hero Banner with Network Data Flow Animation -->
+    <header class="hero network-bg-wrapper">
+        <canvas id="networkCanvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="badge">Annual Technical Extravaganza</span>
+            <div class="hero-logo-wrapper">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Sicurezz'26" class="hero-logo-img">
+</div>
+            <p class="sub-heading">Department of Cyber Security | K.L.N. College of Engineering</p>
+            
+            <div class="hero-details">
+                <span class="info-tag"><i class="fa-regular fa-calendar"></i> September 3, 2026</span>
+                <span class="info-tag"><i class="fa-solid fa-ticket"></i> Registration: {{ data.registration_fee }}</span>
+                <span class="info-tag"><i class="fa-solid fa-laptop-code"></i> Workshop: {{ data.workshop_fee }}</span>
+            </div>
+
+            <div class="hero-buttons">
+                <button class="btn-glow" onclick="openRegisterModal()">Register Now</button>
+                <a href="#events" class="btn-outline">Explore Events</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Burst Badge Cash Prize (Bottom Right Corner) -->
+    <div class="cash-prize-burst">
+        <svg viewBox="0 0 300 260" class="burst-svg">
+            <!-- Outer Burst Spikes -->
+            <polygon points="150,5 170,35 195,10 210,42 240,25 245,60 280,50 270,85 300,105 275,130 295,160 265,175 275,210 240,215 235,250 200,240 185,270 150,250 120,270 100,240 65,250 60,215 25,210 35,175 5,160 25,130 0,105 30,85 20,50 55,60 60,25 90,42 105,10 130,35" class="burst-outer"/>
+            <!-- Inner Burst Border -->
+            <polygon points="150,15 167,40 188,20 201,47 226,32 230,62 260,54 251,83 277,100 256,121 273,146 248,158 256,188 226,192 222,222 192,214 179,239 150,222 125,239 108,214 78,222 74,192 44,188 52,158 27,146 44,121 23,100 49,83 40,54 70,62 74,32 99,47 112,20 133,40" class="burst-inner"/>
+        </svg>
+        <div class="burst-text">
+            <span class="label">TOTAL PRIZE POOL</span>
+            <span class="title">CASH PRIZE</span>
+            <span class="amount">{{ data.cash_prize }}</span>
+        </div>
+    </div>
+
+    <!-- Sponsored By -->
+    <section class="sponsors-section">
+        <h3> <strong>Sponsored & Supported By</strong> </h3>
+        <div class="sponsors-section">
+    <div class="sponsors-container">
+        <!-- Logo 1 -->
+        <div class="sponsor-card">
+            <img src="{{ url_for('static', filename='images/sponsor1.png') }}" alt="Sponsor 1 Logo" class="sponsor-logo">
+        </div>
+        
+        <!-- Logo 2 -->
+        <div class="sponsor-card">
+            <img src="{{ url_for('static', filename='images/sponsor2.png') }}" alt="Sponsor 2 Logo" class="sponsor-logo">
+        </div>
+
+        <!-- Logo 3 -->
+        <div class="sponsor-card">
+            <img src="{{ url_for('static', filename='images/iste-logo.png') }}" alt="Sponsor 3 Logo" class="sponsor-logo">
+        </div>
+    </div>
+</div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-heading">About the Symposium</h2>
+        <div class="card glass-card">
+            <p><strong>SICUREZZ'26</strong> is an Annual Tech Extravaganza organized by the Department of Cyber Security at K.L.N. College of Engineering (KLNCE). The symposium brings together aspiring innovators, young developers, problem-solvers, and creative thinkers from diverse domains of Engineering. It offers a premier dynamic platform to showcase technical skills, compete, and gain insights from security professionals.</p>
+        </div>
+    </section>
+
+    <!-- Symposium Events Section -->
+    <section id="events" class="container">
+        <h2 class="section-heading">Symposium Events</h2>
+        <p class="section-subtitle">Click on any event card to view rules, requirements, and schedule.</p>
+
+        <!-- Technical Events List -->
+        <h3 class="category-heading"><i class="fa-solid fa-code"></i> Technical Events</h3>
+        <div class="grid">
+            {% for event_id, event in data.events.items() if event.category == 'Technical' %}
+            <div class="card event-click-card" onclick="window.location.href='/event/{{ event.id }}'">
+                <div class="card-badge">{{ event.category }}</div>
+                <h3>{{ event.title }}</h3>
+                <p class="tagline">{{ event.tagline }}</p>
+                <p class="venue"><i class="fa-solid fa-location-dot"></i> {{ event.venue }}</p>
+                <p class="desc">{{ event.short_desc }}</p>
+                <span class="view-more">View Event Details <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Non-Technical Events List -->
+        <h3 class="category-heading" style="margin-top: 40px;"><i class="fa-solid fa-gamepad"></i> Non Technical Events</h3>
+        <div class="grid">
+            {% for event_id, event in data.events.items() if event.category == 'Non-Technical' %}
+            <div class="card event-click-card" onclick="window.location.href='/event/{{ event.id }}'">
+                <div class="card-badge">{{ event.category }}</div>
+                <h3>{{ event.title }}</h3>
+                <p class="tagline">{{ event.tagline }}</p>
+                <p class="venue"><i class="fa-solid fa-location-dot"></i> {{ event.venue }}</p>
+                <p class="desc">{{ event.short_desc }}</p>
+                <span class="view-more">View Event Details <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Special Workshop Section -->
+    <section id="workshop" class="container">
+        <h2 class="section-heading">Special Workshop</h2>
+        <div class="card workshop-card">
+            <div class="workshop-header">
+                <h3><i class="fa-solid fa-brain"></i> {{ data.workshop.title }}</h3>
+                <span class="price-tag">Fee: {{ data.workshop.fee }}</span>
+            </div>
+            <p>{{ data.workshop.description }}</p>
+            <button class="btn-glow" onclick="openRegisterModal()" style="margin-top: 15px;">Enroll in Workshop</button>
+        </div>
+    </section>
+
+    <!-- Event Schedule & Agenda Section -->
+<section id="agenda" class="container">
+        <h2 class="section-heading">Event Schedule & Agenda</h2>
+        <div class="card glass-card">
+            <div class="agenda-timeline">
+                <div class="agenda-item">
+                    <span class="time">09:00 AM - 09:30 AM</span>
+                    <span class="task">Registration & Welcome Kit Distribution</span>
+                </div>
+                <div class="agenda-item">
+                    <span class="time">09:45 AM - 10:45 AM</span>
+                    <span class="task">Inaugural Address & Guest Keynote</span>
+                </div>
+                <div class="agenda-item">
+                    <span class="time">11:00 AM - 12:30 PM</span>
+                    <span class="task">Technical Track (Prompt Craft, Nova CTF, Byte Horizon,Workshop)</span>
+                </div>
+                
+                <div class="agenda-item">
+                    <span class="time">12:30 PM - 01:30 PM</span>
+                    <span class="task">Lunch Break</span>
+                </div>
+                <div class="agenda-item">
+                    <span class="time">01:45 PM - 03:00 PM</span>
+                    <span class="task">Non-Technical Track (Vettaiyaadu Vilaiyaadu, Cinema Patti, Adzapper)</span>
+                </div>
+                <div class="agenda-item">
+                    <span class="time">03:15 PM - 04:15 PM</span>
+                    <span class="task">Valedictory Ceremony & Prize Distribution</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- College Official Details Section -->
+    <section id="committee" class="container">
+        <h2 class="section-heading">College Official Details</h2>
+        <div class="grid grid-3">
+            <div class="card text-center">
+                <h4>PRINCIPAL</h4>
+                <p class="highlight">{{ data.principal }}</p>
+            </div>
+            <div class="card text-center">
+                <h4>CONVENOR</h4>
+                <p class="highlight">{{ data.convenor }}</p>
+            </div>
+            <div class="card text-center">
+                <h4>COORDINATOR</h4>
+                <p class="highlight">{{ data.coordinator }}</p>
+            </div>
+            
+        </div>
+
+        <div class="card" style="margin-top: 25px;">
+            <h4 style="margin-bottom: 15px; color: var(--accent-color);">STUDENT INCHARGE</h4>
+            <div class="grid grid-3">
+                {% for student in data.student_incharge %}
+                <div class="student-box">
+                    <span class="role">{{ student.role }}</span>
+                    <span class="name">{{ student.name }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Footer (Centered) -->
+    <footer id="contact" class="text-center">
+        <div class="container footer-content text-center">
+            <h2 class="section-heading text-center" style="border-left: none;">Contact Us</h2>
+            <p style="font-size: 1.1rem; margin-top: 10px;"><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:{{ data.contact_email }}">{{ data.contact_email }}</a></p>
+            <p style="font-size: 1.1rem; margin-top: 10px;">
+    <i class="fa-solid fa-phone"></i>
+    Contact:
+    <a href="tel:{{ data.contact_number }}">{{ data.contact_number }}</a>
+</p>
+            <div class="footer-divider"></div>
+            <p>&copy; 2026 SICUREZZ'26 | Department of Cyber Security, KLNCE</p>
+        </div>
+    </footer>
+
+    <!-- Modal Instructions -->
+    <div id="registerModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-triangle-exclamation"></i> Important Instructions</h3>
+                <span class="close-btn" onclick="closeRegisterModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="alert-box">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Only one member can register per team.</li>
+                        <li><i class="fa-solid fa-check"></i> Mention your name, team members, and college name <strong>correctly</strong>.</li>
+                        <li><i class="fa-solid fa-check"></i> Certificate details will match your entry.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeRegisterModal()">Cancel</button>
+                <button class="btn-glow" onclick="proceedToGoogleForm('https://forms.gle/kxcjAkU1qsp95r8k8')">Proceed to Form</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Modal & Network Animation -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = canvas.parentElement.clientHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const nodes = [];
+        const nodeCount = 50;
+
+        for (let i = 0; i < nodeCount; i++) {
+            nodes.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 1.5,
+                vy: (Math.random() - 0.5) * 1.5,
+                radius: Math.random() * 2 + 1
+            });
+        }
+
+        function drawNetwork() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < nodes.length; i++) {
+                let node = nodes[i];
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#00f0ff';
+                ctx.fill();
+
+                for (let j = i + 1; j < nodes.length; j++) {
+                    let other = nodes[j];
+                    let dist = Math.hypot(node.x - other.x, node.y - other.y);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(node.x, node.y);
+                        ctx.lineTo(other.x, other.y);
+                        ctx.strokeStyle = `rgba(0, 240, 255, ${1 - dist / 120})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(drawNetwork);
+        }
+        drawNetwork();
+    </script>
+</body>
+</html>
