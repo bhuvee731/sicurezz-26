@@ -211,44 +211,43 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
-.logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--accent-color);
-    text-decoration: none;
-}
-
-.nav-links {
+/* Sponsors Section Container */
+.sponsors-container {
     display: flex;
-    list-style: none;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 30px 20px;
 }
 
-.nav-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 600;
+/* Base Uniform Logo Sizing (Desktop/Laptop) */
+.sponsor-logo, 
+.sponsors-container img {
+    height: 90px;          /* Enforces equal visual height for all logos */
+    width: auto;           /* Maintains original aspect ratio */
+    max-width: 220px;      /* Prevents wide images from becoming huge */
+    object-fit: contain;
+    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.4));
+    transition: transform 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: var(--accent-color);
+.sponsor-logo:hover, 
+.sponsors-container img:hover {
+    transform: scale(1.05);
 }
 
-/* Mobile View (Centers logo and links neatly) */
+/* Mobile Responsiveness (Screens <= 768px) */
 @media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-        padding: 15px 5%;
+    .sponsors-container {
+        gap: 25px;
+        padding: 20px 10px;
     }
 
-    .nav-links {
-        justify-content: center;
-        width: 100%;
-        gap: 25px;
+    .sponsor-logo, 
+    .sponsors-container img {
+        height: 70px;       /* Significantly larger & clear on mobile */
+        max-width: 160px;
     }
 }
 
