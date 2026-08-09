@@ -8,7 +8,6 @@ SYMPOSIUM_DATA = {
     "college": "K.L.N. College of Engineering (KLNCE)",
     "date": "September 3, 2026",
     "registration_fee": "₹250 / Member",
-    "workshop_fee": "₹250",
     "cash_prize": "₹10,000",
     "google_form_url": "https://forms.gle/kxcjAkU1qsp95r8k8",
     "contact_email": "SICUREZZ26@gmail.com",
