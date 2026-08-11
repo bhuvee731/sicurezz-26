@@ -9,7 +9,7 @@ SYMPOSIUM_DATA = {
     "date": "September 3, 2026",
     "registration_fee": "₹250 / Member",
     "cash_prize": "₹10,000",
-    "google_form_url": "https://forms.gle/kxcjAkU1qsp95r8k8",
+    "google_form_url": "https://forms.gle/Q9MLGQsdEdSwCG9W7",
     "contact_email": "SICUREZZ26@gmail.com",
     "contact_number": "+91 7339487006",
     
@@ -127,7 +127,7 @@ SYMPOSIUM_DATA = {
             "description": "An engaging multi-round event for movie lovers testing dialogue recognition, missing song lyrics, audio translations, and drawing-based pictionary.",
             "rounds": [
                 "Round 1: Preliminary - Guess the Movie & Missing Song Lines",
-                "Round 2: Semi-Final - Dialogue Connection & Song Translation",
+                "Round 2: Semi-Final - Find the meme & Song Translation",
                 "Round 3: Final - Pictionary (Identify movies/songs from visual sketches)"
             ],
             "rules": [
