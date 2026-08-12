@@ -74,8 +74,20 @@ body {
         bottom: auto;
         right: auto;
         margin: 10px auto 0 auto;
-        width: 130px;
-        height: 115px;
+        width: 155px !important;
+        height: 135px !important;
+    }
+
+    /* Adjust text size inside the badge so it fits comfortably within the spikes */
+    .cash-prize-burst .prize-title,
+    .cash-prize-burst h3,
+    .cash-prize-burst p {
+        font-size: 0.85rem !important; /* Slightly smaller font to prevent edge overflow */
+        padding: 0 8px;                 /* Adds side padding from outer boundary */
+    }
+
+    .cash-prize-burst .prize-amount {
+        font-size: 1rem !important;
     }
 }
 
