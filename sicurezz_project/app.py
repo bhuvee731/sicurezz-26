@@ -144,13 +144,14 @@ SYMPOSIUM_DATA = {
             "short_desc": "Test brand observation, video details, and silent advertisement gestures.",
             "description": "AdZapper is an advertisement-based team event designed to test brand knowledge, video observation, and acting gestures without speaking names or slogans.",
             "rounds": [
-                "Welcome Event – Jingle Jam: Audio Guess Challenge; identify the brand and product from advertisement audio. This is non-elimination and its score is not added to the final result."
+                "Welcome Event – Jingle Jam: Audio Guess Challenge; identify the brand and product from advertisement audio. This is non-elimination and its score is not added to the final result.",
 
                 "Round 1: Brand Blitz Quiz: MCQs on brands, logos, taglines, products, advertisements, mascots, and marketing concepts. 1 point per correct answer, no negative marking.",
                 "Round 2: Ad Detective: Watch a TV advertisement for 10 seconds, then answer questions based on what was shown. The combined Round 1 + Round 2 scores determine the Top 4 for the finale.",
-                "Round 3: Puzzle Rush: Top teams solve five advertising-themed puzzles inside a Puzzle Box in order. Bonus points are 50 / 40 / 30 for 1st / 2nd / 3rd."
-                "Welcome Event – Jingle Jam: Audio Guess Challenge; identify the brand and product from advertisement audio. This is non-elimination and its score is not added to the final result."
+                "Round 3: Puzzle Rush: Top teams solve five advertising-themed puzzles inside a Puzzle Box in order. Bonus points are 50 / 40 / 30 for 1st / 2nd / 3rd.",
+                "Winner: Scores from all three competitive rounds are combined to declare the AdZap Champion."
             ],
+            
             "rules": [
                 "Each team must consist of 2 participants.",
                 "Mobile phones, internet access, and smart devices are strictly prohibited during the competition."
