@@ -9,7 +9,7 @@ SYMPOSIUM_DATA = {
     "date": "September 3, 2026",
     "registration_fee": "₹250 / Member",
     "cash_prize": "₹10,000",
-    "google_form_url": "https://forms.gle/Q9MLGQsdEdSwCG9W7",
+    "google_form_url": "https://forms.gle/zGX8EJmw5kk8qVtn9",
     "contact_email": "SICUREZZ26@gmail.com",
     "contact_number": "+91 7339487006",
     
