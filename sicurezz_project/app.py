@@ -46,7 +46,7 @@ SYMPOSIUM_DATA = {
                 "The judges' decision will be final and binding.",
                 "Maintain professional conduct and respect fellow participants throughout the event."
             ],
-            "prerequisites": ["Laptop with Flutter SDK / IDE installed"]
+            
         },
         "nova-ctf": {
             "id": "nova-ctf",
