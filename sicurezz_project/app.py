@@ -99,10 +99,10 @@ SYMPOSIUM_DATA = {
             ]
         },
         "vettaiyaadu-vilaiyaadu": {
-            "Registration Closed"
             "id": "vettaiyaadu-vilaiyaadu",
             "title": "Vettaiyaadu Vilaiyaadu",
             "category": "Non-Technical",
+            "Status" :"Reistraion Closed",
             "tagline": "Campus-Wide Treasure Hunt",
             "venue": "Mechanical Seminar Hall",
             "short_desc": "A 3-stage treasure hunt testing intelligence, speed, and campus observation.",
