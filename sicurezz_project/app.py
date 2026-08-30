@@ -99,6 +99,7 @@ SYMPOSIUM_DATA = {
             ]
         },
         "vettaiyaadu-vilaiyaadu": {
+            "Registration Closed"
             "id": "vettaiyaadu-vilaiyaadu",
             "title": "Vettaiyaadu Vilaiyaadu",
             "category": "Non-Technical",
