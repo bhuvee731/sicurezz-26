@@ -64,6 +64,14 @@
             </div>
             {% endif %}
 
+            <div class="detail-section" style="margin-top: 30px; text-align: center;">
+            {% if event.is_closed %}
+                <button class="btn btn-closed" disabled>Registration Closed</button>
+            {% else %}
+                <a href="{{ data.registration_link }}" target="_blank" class="btn btn-primary">Register Now</a>
+            {% endif %}
+        </div>
+
             <div style="margin-top: 30px; text-align: center;">
                 <button class="btn-glow glow-box" onclick="openRegisterModal()" style="padding: 14px 35px; font-size: 1.1rem;">Register for {{ event.title }}</button>
             </div>

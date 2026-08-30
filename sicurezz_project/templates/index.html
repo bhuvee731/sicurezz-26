@@ -112,6 +112,11 @@
             {% for event_id, event in data.events.items() if event.category == 'Non-Technical' %}
             <div class="card event-click-card" onclick="window.location.href='/event/{{ event.id }}'">
                 <div class="card-badge">{{ event.category }}</div>
+
+                {% if event.is_closed %}
+            <span class="closed-tag">Registration Closed</span>
+        {% endif %}
+        
                 <h3>{{ event.title }}</h3>
                 <p class="tagline">{{ event.tagline }}</p>
                 <p class="venue"><i class="fa-solid fa-location-dot"></i> {{ event.venue }}</p>

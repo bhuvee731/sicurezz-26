@@ -103,10 +103,10 @@ SYMPOSIUM_DATA = {
             "title": "Vettaiyaadu Vilaiyaadu",
             "category": "Non-Technical",
             "tagline": "Campus-Wide Treasure Hunt",
-            "STATUS" : "Registraion Closed",
             "venue": "Mechanical Seminar Hall",
             "short_desc": "A 3-stage treasure hunt testing intelligence, speed, and campus observation.",
             "description": "A fun-filled high-stakes campus treasure hunt featuring preliminary quizzes, physical item collection around college grounds, and tactical sequential clue solving.",
+            "is_closed": True,
             "rounds": [
                 "Round 1: Quiz - Movies, songs, reasoning & memory (15 Questions, 10 Mins)",
                 "Round 2: Find the Items - Hunt 15 random items on campus (20 Mins)",
