@@ -586,3 +586,33 @@ footer a { color: var(--accent-color); text-decoration: none; }
         max-width: 320px;
     }
 }
+
+
+/* Closed Badge on Index Page Cards */
+.closed-tag {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    font-size: 0.95rem;          /* Increased font size (was 0.75rem) */
+    font-weight: 700;
+    padding: 5px 12px;           /* Added slightly more padding */
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Big Closed Button on Event Detail Page */
+.btn-closed {
+    background-color: rgba(255, 77, 77, 0.15) !important; /* Subtle red hue background */
+    color: #ff6b6b !important;                            /* Bright red text for visibility */
+    border: 1.5px solid #ff4d4d !important;
+    cursor: not-allowed !important;
+    padding: 14px 32px;
+    font-size: 1.4rem !important;                         /* Increased font size (was 1.1rem) */
+    font-weight: bold;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
