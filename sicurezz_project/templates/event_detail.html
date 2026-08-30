@@ -67,7 +67,10 @@
             <div class="detail-section" style="margin-top: 30px; text-align: center;">
             {% if event.is_closed %}
                 <button class="btn btn-closed" disabled>Registration Closed</button>
-           
+            {% else %}
+                <button class="btn-glow glow-box" onclick="openRegisterModal()" style="padding: 14px 35px; font-size: 1.1rem;">Register for {{ event.title }}</button>
+
+            {% endif %}
         </div>
 
             <div style="margin-top: 30px; text-align: center;">
